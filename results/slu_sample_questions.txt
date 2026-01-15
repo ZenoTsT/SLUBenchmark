@@ -1,0 +1,1067 @@
+SLU BENCHMARK — QUALITATIVE SAMPLES
+==================================================
+
+
+--- CATEGORY: TEMPORAL (10/131) ---
+
+[1] Sentence ID: -6YYqn8lplg_8
+Sentence:
+  Now the most common tumbling pattern that we're going to use on cheerleading squads is what we like to call the X.
+
+Question:
+  At the moment of speaking, has the squad already been using this most common tumbling pattern?
+
+Options:
+  [CORRECT]   No, they are planning to use this tumbling pattern in the future.
+  [DISTRACTOR] Yes, they have already been using this tumbling pattern for some time.
+  [DISTRACTOR] Yes, they are using this tumbling pattern right now.
+  [DISTRACTOR] No, they used this tumbling pattern only in the past and no longer do so.
+  [DISTRACTOR] No, they are not going to use this tumbling pattern at any time.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[2] Sentence ID: -9Kic0QsCYs_8
+Sentence:
+  We'll wait for that to cook and in the meanwhile, we'll take our tomatoes, maybe about 3 of them, and we'll cut them into cubes.
+
+Question:
+  While they are waiting for something to cook, what are they doing at the same time?
+
+Options:
+  [CORRECT]   They are cutting several tomatoes into cubes.
+  [DISTRACTOR] They are waiting without doing anything else.
+  [DISTRACTOR] They are finishing cutting tomatoes they already cubed.
+  [DISTRACTOR] They are planning to cut tomatoes later after it cooks.
+  [DISTRACTOR] They are checking whether the tomatoes have already cooked.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[3] Sentence ID: --dANj_01AU_13
+Sentence:
+  So we're going to start again on this one.
+
+Question:
+  Has the action on this one already been started at the moment of speaking?
+
+Options:
+  [CORRECT]   No, the action is about to be started again.
+  [DISTRACTOR] Yes, the action has already been completed again.
+  [DISTRACTOR] Yes, the action is currently in progress again.
+  [DISTRACTOR] No, the action will not be started again at all.
+  [DISTRACTOR] Yes, the action was started again earlier and is now finished.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[4] Sentence ID: -AVtT8Kl-fs_22
+Sentence:
+  We have completed the lower part the base and the top part.
+
+Question:
+  What is the current status of the work on the lower part, the base, and the top part?
+
+Options:
+  [CORRECT]   They are already finished.
+  [DISTRACTOR] They are being worked on right now.
+  [DISTRACTOR] They have not been started yet.
+  [DISTRACTOR] They will be worked on later.
+  [DISTRACTOR] They are only planned for the future.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[5] Sentence ID: -1rM0t5FMiE_0
+Sentence:
+  We're doing the scissoring now.
+
+Question:
+  At what point in time is the scissoring taking place?
+
+Options:
+  [CORRECT]   It is happening right now.
+  [DISTRACTOR] It already happened earlier.
+  [DISTRACTOR] It will happen later on.
+  [DISTRACTOR] It has not happened and will not happen.
+  [DISTRACTOR] It was planned but has been canceled.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[6] Sentence ID: -8uwu59w8QE_14
+Sentence:
+  In the next segment we are going to talk about another money issue which is sponsorship.
+
+Question:
+  Have they already discussed the money issue of sponsorship?
+
+Options:
+  [CORRECT]   No, they will discuss sponsorship in a later segment.
+  [DISTRACTOR] Yes, they have already discussed sponsorship in a previous segment.
+  [DISTRACTOR] Yes, they are discussing sponsorship in this segment.
+  [DISTRACTOR] No, they discussed sponsorship only in an earlier segment.
+  [DISTRACTOR] Yes, they discussed sponsorship before recording the segments.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[7] Sentence ID: -DV52J2dGWQ_8
+Sentence:
+  So again you are going to start at the end of your hair shaft and you are going to work your way up towards your root.
+
+Question:
+  Has the person already worked up from the ends of the hair shaft to the roots?
+
+Options:
+  [CORRECT]   No, they are going to do that next.
+  [DISTRACTOR] Yes, they have already done that.
+  [DISTRACTOR] Yes, they are doing that right now.
+  [DISTRACTOR] No, they have just finished doing that.
+  [DISTRACTOR] Yes, they did that earlier.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[8] Sentence ID: -9Kic0QsCYs_4
+Sentence:
+  The dish now we're going to be preparing is called paneer masala.
+
+Question:
+  Have they already prepared the dish mentioned in the sentence?
+
+Options:
+  [CORRECT]   No, they are going to prepare it later.
+  [DISTRACTOR] Yes, they have already prepared it.
+  [DISTRACTOR] Yes, they are serving it right now.
+  [DISTRACTOR] They are preparing it at this very moment.
+  [DISTRACTOR] They finished preparing it earlier.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[9] Sentence ID: -AP1d_fHmeM_3
+Sentence:
+  And now grab a match or a lighter, and some friends to watch, go ahead and set the drink on fire, the 151 should light pretty easily, and let it sit, enjoy the luster of the flames, blow it out, and take it down.
+
+Question:
+  At what point in the process should the drink be consumed?
+
+Options:
+  [CORRECT]   After the flames have been blown out.
+  [DISTRACTOR] Before the drink is set on fire.
+  [DISTRACTOR] While the flames are still burning.
+  [DISTRACTOR] Before the 151 has a chance to light.
+  [DISTRACTOR] As soon as the match or lighter is grabbed.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+[10] Sentence ID: -DQ1scNd-M8_7
+Sentence:
+  And then I'm going to pat to elongate it and thin it out just a little bit more.
+
+Question:
+  Has the speaker already performed the patting to elongate and thin it out?
+
+Options:
+  [CORRECT]   No, the patting will be done afterward.
+  [DISTRACTOR] Yes, the patting has already been completed.
+  [DISTRACTOR] Yes, the patting is happening right now.
+  [DISTRACTOR] No, the patting was done earlier and is now finished.
+
+Checks:
+  - WRONG #distractors ✗
+  - correct not duplicated ✓
+  - category = temporal
+
+----------------------------------------
+
+
+--- CATEGORY: LOGICAL (10/375) ---
+
+[1] Sentence ID: -Bo59KWo7vc_3
+Sentence:
+  And what I've just demonstrated does not tell anyone that I know anything about my platform, so let me rephrase it in a more specific way.
+
+Question:
+  Why does the speaker decide to rephrase their statement?
+
+Options:
+  [CORRECT]   Because the previous version failed to show that they know anything about their platform.
+  [DISTRACTOR] Because the previous version clearly proved that they know everything about their platform.
+  [DISTRACTOR] Because the previous version already showed that they know a lot about their platform.
+  [DISTRACTOR] Because the previous version only partly showed that they know something about their platform.
+  [DISTRACTOR] Because the previous version made it impossible to talk about their platform at all.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[2] Sentence ID: -0JdYlTf9Y8_8
+Sentence:
+  We also put little felt dots on the bottom of the trophies and that keeps them from scratching your furniture when you get home.
+
+Question:
+  What is the logical relationship between adding the little felt dots and the trophies not scratching the furniture?
+
+Options:
+  [CORRECT]   Adding the little felt dots is meant to prevent the trophies from scratching the furniture.
+  [DISTRACTOR] Adding the little felt dots is meant to cause the trophies to scratch the furniture more
+  [DISTRACTOR] The trophies scratch the furniture first, and then little felt dots are added because of that
+  [DISTRACTOR] The trophies avoid scratching the furniture even if little felt dots are not added
+  [DISTRACTOR] Little felt dots are added only after the trophies have already scratched the furniture
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[3] Sentence ID: -9zB8cv_WJk_11
+Sentence:
+  Once you get the glue off, you just simply, simply stick your other adhesive tile down in its place and you have a fixed adhesive tile.
+
+Question:
+  What must happen before you can place the other adhesive tile down in its place?
+
+Options:
+  [CORRECT]   The glue has to be removed first.
+  [DISTRACTOR] The glue has to be applied first.
+  [DISTRACTOR] The other tile has to be removed after.
+  [DISTRACTOR] The new tile has to be fixed before the glue is removed.
+  [DISTRACTOR] The glue and the tile have to be placed at the same time.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[4] Sentence ID: -1fUFbij2s0_15
+Sentence:
+  And I sharpen knives when I'm at work, I sharpen my knives before every task, so I don't have to stop in the middle and go back and sharpen it.
+
+Question:
+  Why does the speaker sharpen their knives before every task rather than during it?
+
+Options:
+  [CORRECT]   Because sharpening beforehand prevents having to stop in the middle and go back to sharpen.
+  [DISTRACTOR] Because sharpening during the task prevents having to sharpen beforehand.
+  [DISTRACTOR] Because sharpening only after each task prevents having to stop in the middle.
+  [DISTRACTOR] Because never sharpening the knives prevents having to go back and sharpen.
+  [DISTRACTOR] Because sharpening only when the task is finished prevents starting it too early.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[5] Sentence ID: -AFID_P6YU0_16
+Sentence:
+  They're a plant that probably never needs to be watered and you'll never lose 'em.
+
+Question:
+  What is implied about needing to water this plant?
+
+Options:
+  [CORRECT]   It likely does not need to be watered at all.
+  [DISTRACTOR] It must be watered very frequently.
+  [DISTRACTOR] It needs to be watered only on rare occasions.
+  [DISTRACTOR] It should be watered regularly but not too often.
+  [DISTRACTOR] It might die quickly if it is not watered.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[6] Sentence ID: -EAXGeHv9U4_5
+Sentence:
+  So you just measure and cut, and again be sure you measure the exact length because if you go over and it ends up sticking out and the iron gets on it, it's going to get really hot and it's going to make the outside of your fabric really sticky and that's going to start to bunch up and you don't want that.
+
+Question:
+  Why is it important not to let the material extend past the intended length when you cut it?
+
+Options:
+  [CORRECT]   Because if it sticks out and the iron touches it, it will heat up, become sticky, and cause the outer fabric to bunch.
+  [DISTRACTOR] Because if it sticks out and the iron avoids it, it will cool down, become smooth, and keep the outer fabric flat.
+  [DISTRACTOR] Because if it lies short and the iron touches it, it will heat up, become sticky, and keep the outer fabric flat.
+  [DISTRACTOR] Because if it lies short and the iron avoids it, it will cool down, become sticky, and cause the outer fabric to bunch.
+  [DISTRACTOR] Because if it lies flat and the iron touches only the fabric, it will heat up, become smooth, and prevent any bunching.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[7] Sentence ID: -CI0wTBVlaI_15
+Sentence:
+  A lot of people use clippers, I like to use a Dremel because a Dremel will grind them down and you've got control of how short you actually go to grind down the toenails.
+
+Question:
+  Why does the speaker prefer using a Dremel instead of clippers for toenails?
+
+Options:
+  [CORRECT]   Because it grinds the nails down and allows control over how short they are made.
+  [DISTRACTOR] Because it grinds the nails down but removes control over how short they are made.
+  [DISTRACTOR] Because it cuts the nails quickly but does not grind them down.
+  [DISTRACTOR] Because it offers control over nail length but does not grind the nails down.
+  [DISTRACTOR] Because it neither grinds the nails down nor offers control over nail length.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[8] Sentence ID: -BKq3iOBB9k_21
+Sentence:
+  So note cards are a really important tool, but keep them organized.
+
+Question:
+  How are note cards and organization logically related in this sentence?
+
+Options:
+  [CORRECT]   Note cards are presented as valuable, but their usefulness is limited unless they are kept organized.
+  [DISTRACTOR] Note cards are presented as valuable only if they are never organized.
+  [DISTRACTOR] Note cards are presented as unnecessary, so they do not need to be organized.
+  [DISTRACTOR] Note cards are presented as useful because they make everything disorganized.
+  [DISTRACTOR] Note cards are presented as optional, but organizing them will make them less effective.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[9] Sentence ID: -BFCJ9zmfOo_23
+Sentence:
+  When I consume oils, I try to have them in the food that they're in.
+
+Question:
+  What does the speaker’s approach imply about how they prefer to take in oils?
+
+Options:
+  [CORRECT]   They prefer to consume oils only as part of the foods that contain them.
+  [DISTRACTOR] They prefer to consume oils separately instead of with the foods that contain them.
+  [DISTRACTOR] They prefer to remove oils from the foods that naturally contain them.
+  [DISTRACTOR] They prefer to avoid consuming any oils regardless of the foods that contain them.
+  [DISTRACTOR] They prefer to add extra oils to foods that do not already contain them.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+[10] Sentence ID: -9TmNCFEtDo_5
+Sentence:
+  Mascara brushes are sold at drug stores or your beauty supply store and they do come in different sizes, like I said, and it is best to change your mascara brush because it tends to build up bacteria and to clump.
+
+Question:
+  Why is it recommended to change your mascara brush?
+
+Options:
+  [CORRECT]   Because it can accumulate bacteria and cause the product to clump.
+  [DISTRACTOR] Because it keeps the mascara from drying out in the container.
+  [DISTRACTOR] Because it makes the mascara change color more evenly.
+  [DISTRACTOR] Because it prevents the brush from becoming too soft over time.
+  [DISTRACTOR] Because it helps the mascara last much longer without replacement.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = logical
+
+----------------------------------------
+
+
+--- CATEGORY: PRAGMATIC (10/137) ---
+
+[1] Sentence ID: -7BtY3iQIdo_16
+Sentence:
+  And, you're going to place them right on that border and go all the way around the cake.
+
+Question:
+  What is the speaker mainly doing in this sentence?
+
+Options:
+  [CORRECT]   Giving step-by-step instructions for an action.
+  [DISTRACTOR] Describing a completed action in the past.
+  [DISTRACTOR] Asking for permission to perform an action.
+  [DISTRACTOR] Expressing doubt about how to perform an action.
+  [DISTRACTOR] Making a promise about a future action.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[2] Sentence ID: -BABPsEWA54_14
+Sentence:
+  Start with my left side.
+
+Question:
+  What is the communicative intention of the sentence?
+
+Options:
+  [CORRECT]   Giving an instruction about how to proceed.
+  [DISTRACTOR] Asking a question about what to do.
+  [DISTRACTOR] Making a neutral statement about a preference.
+  [DISTRACTOR] Expressing uncertainty about what to start with.
+  [DISTRACTOR] Making a suggestion without directing action.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[3] Sentence ID: -9umTJVGSqk_6
+Sentence:
+  Put it on the fingertip, move it over, and pinch it off.
+
+Question:
+  What is the communicative intention of this sentence?
+
+Options:
+  [CORRECT]   To give a sequence of step-by-step instructions.
+  [DISTRACTOR] To describe something that happened earlier.
+  [DISTRACTOR] To ask for permission to do something.
+  [DISTRACTOR] To express doubt about how to proceed.
+  [DISTRACTOR] To announce a future demonstration.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[4] Sentence ID: -9nBmSvp2Co_12
+Sentence:
+  Again, put it in the freezer if you need to.
+
+Question:
+  What is the speaker mainly doing with this sentence?
+
+Options:
+  [CORRECT]   Giving a conditional instruction.
+  [DISTRACTOR] Making a factual report about the freezer.
+  [DISTRACTOR] Asking a question about using the freezer.
+  [DISTRACTOR] Expressing doubt about using the freezer.
+  [DISTRACTOR] Making a promise about the freezer.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[5] Sentence ID: -1XUnputrgk_1
+Sentence:
+  It may not be for you.
+
+Question:
+  What level of commitment does the speaker express about the statement?
+
+Options:
+  [CORRECT]   They present it as a possibility rather than a certainty.
+  [DISTRACTOR] They present it as an absolute certainty.
+  [DISTRACTOR] They present it as a firm instruction.
+  [DISTRACTOR] They present it as a direct command.
+  [DISTRACTOR] They present it as a guaranteed prediction.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[6] Sentence ID: -AZVqXtWGg0_9
+Sentence:
+  Then I'll come over here and for me, personally, I like to pull the blade towards me but slowly, because you don't want to....
+
+Question:
+  What is the communicative intention of the sentence?
+
+Options:
+  [CORRECT]   Describing a personal way of performing an action.
+  [DISTRACTOR] Requesting that someone else perform an action.
+  [DISTRACTOR] Announcing that an action will no longer be performed.
+  [DISTRACTOR] Complaining about how an action was previously performed.
+  [DISTRACTOR] Asking for advice on how to perform an action.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[7] Sentence ID: -8EJ9aomFAc_5
+Sentence:
+  You can get rid of all of that old wrapping paper.
+
+Question:
+  What is the communicative intention of this sentence?
+
+Options:
+  [CORRECT]   Giving permission to dispose of something.
+  [DISTRACTOR] Requesting someone to keep something.
+  [DISTRACTOR] Announcing that something has been disposed of.
+  [DISTRACTOR] Asking whether it is possible to dispose of something.
+  [DISTRACTOR] Warning against disposing of something.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[8] Sentence ID: -AKdG2AyDW4_8
+Sentence:
+  See like this nice rise and fall I'm getting?
+
+Question:
+  What kind of communicative act is being performed in the sentence?
+
+Options:
+  [CORRECT]   The speaker is asking a confirmation question.
+  [DISTRACTOR] The speaker is giving a direct instruction.
+  [DISTRACTOR] The speaker is making a confident statement.
+  [DISTRACTOR] The speaker is expressing a tentative suggestion.
+  [DISTRACTOR] The speaker is refusing a previous request.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[9] Sentence ID: --8pSDeC-fg_11
+Sentence:
+  If so you have high self esteem.
+
+Question:
+  What kind of statement is this sentence?
+
+Options:
+  [CORRECT]   It is a conditional conclusion about the listener.
+  [DISTRACTOR] It is a direct command to the listener.
+  [DISTRACTOR] It is a question asking about the listener.
+  [DISTRACTOR] It is an invitation addressed to the listener.
+  [DISTRACTOR] It is an apology directed at the listener.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+[10] Sentence ID: -3sFcDBFxc8_8
+Sentence:
+  So I'm going to go ahead and dip down here, and hopefully you can see this.
+
+Question:
+  What is the speaker mainly doing with this sentence?
+
+Options:
+  [CORRECT]   Introducing an action while checking that the audience can follow it.
+  [DISTRACTOR] Reporting an action that was completed earlier.
+  [DISTRACTOR] Requesting that someone else perform the action instead.
+  [DISTRACTOR] Announcing that no further action will be shown.
+  [DISTRACTOR] Explaining why the action cannot be demonstrated.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = pragmatic
+
+----------------------------------------
+
+
+--- CATEGORY: DETAILS (10/265) ---
+
+[1] Sentence ID: -23PZTqtDBw_10
+Sentence:
+  So we are going to work one side of the body, and then we will work the other side of your body, and we want to follow a rep scheme of anywhere from ten reps to fifteen reps per side.
+
+Question:
+  How many repetitions are intended for each side of the body?
+
+Options:
+  [CORRECT]   Between ten and fifteen repetitions per side.
+  [DISTRACTOR] Between five and ten repetitions per side.
+  [DISTRACTOR] Between fifteen and twenty repetitions per side.
+  [DISTRACTOR] Exactly ten repetitions per side.
+  [DISTRACTOR] Exactly fifteen repetitions per side.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[2] Sentence ID: -AFID_P6YU0_14
+Sentence:
+  I put 'em in some of the boggier areas in my yard and they've done well, too.
+
+Question:
+  How have the things placed in the boggier areas of the yard performed?
+
+Options:
+  [CORRECT]   They have done well there.
+  [DISTRACTOR] They have done poorly there.
+  [DISTRACTOR] They have not changed there.
+  [DISTRACTOR] They have failed completely there.
+  [DISTRACTOR] They have struggled somewhat there.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[3] Sentence ID: -1fUFbij2s0_31
+Sentence:
+  And after that, you want to use your sharpening steel, which is really just refining the edge.
+
+Question:
+  In the sentence, what is the described function of the sharpening steel?
+
+Options:
+  [CORRECT]   Its function is to refine the edge.
+  [DISTRACTOR] Its function is to create a new edge.
+  [DISTRACTOR] Its function is to remove the edge.
+  [DISTRACTOR] Its function is to dull the edge.
+  [DISTRACTOR] Its function is to change the edge shape completely.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[4] Sentence ID: -0N0jbyBW6g_7
+Sentence:
+  It allows you to take these different threads and stitch one through the fabric and to follow along the design to create whatever design it is.
+
+Question:
+  What does this tool or process enable you to do with the different threads?
+
+Options:
+  [CORRECT]   Guide a single thread through the fabric along a pattern to form a desired design.
+  [DISTRACTOR] Scatter multiple threads randomly across the fabric without forming a pattern.
+  [DISTRACTOR] Layer threads on top of the fabric to cover it completely without a pattern.
+  [DISTRACTOR] Cut away threads from the fabric to remove any existing design.
+  [DISTRACTOR] Attach a single thread only at the edges of the fabric without following a pattern.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[5] Sentence ID: -9_jI7kWiQY_5
+Sentence:
+  And then you'll take a pitcher, and get a scoop, poor it right into your sieve.
+
+Question:
+  What container are you instructed to use before pouring into the sieve?
+
+Options:
+  [CORRECT]   A pitcher.
+  [DISTRACTOR] A bowl.
+  [DISTRACTOR] A cup.
+  [DISTRACTOR] A jar.
+  [DISTRACTOR] A pan.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[6] Sentence ID: -9__F8XKDuE_6
+Sentence:
+  These type of stoves give you a little more latitude of what kind of fuel you can get for them.
+
+Question:
+  According to the sentence, what is the specific advantage of these type of stoves?
+
+Options:
+  [CORRECT]   They allow for a wider range of fuels to be used with them.
+  [DISTRACTOR] They require a very specific type of fuel to be used with them.
+  [DISTRACTOR] They reduce the amount of fuel needed for them.
+  [DISTRACTOR] They restrict which brands of fuel can be used with them.
+  [DISTRACTOR] They are limited to only one kind of fuel for them.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[7] Sentence ID: -AZVqXtWGg0_4
+Sentence:
+  But in this case, I'm going to use it for cutting out the paper.
+
+Question:
+  For what specific purpose does the speaker intend to use it in this situation?
+
+Options:
+  [CORRECT]   For cutting out the paper.
+  [DISTRACTOR] For measuring the paper.
+  [DISTRACTOR] For folding up the paper.
+  [DISTRACTOR] For coloring on the paper.
+  [DISTRACTOR] For gluing down the paper.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[8] Sentence ID: -7BtY3iQIdo_1
+Sentence:
+  And, we're going to pipe the pearls with a number four tip.
+
+Question:
+  What specific size of tip will be used to pipe the pearls?
+
+Options:
+  [CORRECT]   A number four tip will be used.
+  [DISTRACTOR] A number three tip will be used.
+  [DISTRACTOR] A number five tip will be used.
+  [DISTRACTOR] A number two tip will be used.
+  [DISTRACTOR] A number six tip will be used.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[9] Sentence ID: -00cp1iGiDw_7
+Sentence:
+  So there is something called sentinel and this is a monthly tablet and sentinel actually prevents not only fleas but heart worm as well and the come individually wrap packages.
+
+Question:
+  What does the product called sentinel do, according to the sentence?
+
+Options:
+  [CORRECT]   It prevents both fleas and heartworm.
+  [DISTRACTOR] It prevents fleas but not heartworm.
+  [DISTRACTOR] It prevents heartworm but not fleas.
+  [DISTRACTOR] It treats fleas after they appear but not heartworm.
+  [DISTRACTOR] It only reduces the number of fleas and heartworm.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+[10] Sentence ID: -EsVrbRTMU4_17
+Sentence:
+  In the outfield, you need a bigger pocket, a little bit thicker.
+
+Question:
+  What specific change is needed for the glove used in the outfield?
+
+Options:
+  [CORRECT]   It should have a larger pocket and be slightly thicker.
+  [DISTRACTOR] It should have a smaller pocket and be slightly thinner.
+  [DISTRACTOR] It should have a larger pocket and be slightly thinner.
+  [DISTRACTOR] It should have a smaller pocket and be slightly thicker.
+  [DISTRACTOR] It should keep the same pocket size but be slightly thicker.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = details
+
+----------------------------------------
+
+
+--- CATEGORY: GLOBAL (10/161) ---
+
+[1] Sentence ID: -08ZGCviCm4_0
+Sentence:
+  Hello welcome my name is Julio Nutt and I am a master instructor of the Jim McLean Golf School in Miami, Florida.
+
+Question:
+  What overall role is the speaker taking in this sentence?
+
+Options:
+  [CORRECT]   A master golf instructor introducing himself to an audience.
+  [DISTRACTOR] A professional golfer describing a recent tournament result.
+  [DISTRACTOR] A student asking for information about golf lessons.
+  [DISTRACTOR] A commentator reporting on a golf school in Miami.
+  [DISTRACTOR] An event organizer announcing a golf competition in Florida.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[2] Sentence ID: -7H7ZHO_4Ao_9
+Sentence:
+  She's going to look fantastic on my desk so I hope you had as much fun making her as I did.
+
+Question:
+  What is the overall communicative purpose of this sentence?
+
+Options:
+  [CORRECT]   To express pleasure with the result and appreciation for the effort involved.
+  [DISTRACTOR] To complain about the result and criticize the effort involved.
+  [DISTRACTOR] To request that someone start working on the result immediately.
+  [DISTRACTOR] To instruct someone on exactly how to create a similar result.
+  [DISTRACTOR] To warn someone not to place the result in a particular location.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[3] Sentence ID: -AZVqXtWGg0_16
+Sentence:
+  So what I'll do is repeat the process.
+
+Question:
+  What is the main purpose of this sentence within a broader explanation?
+
+Options:
+  [CORRECT]   To indicate that the speaker will perform the same steps again as part of the explanation.
+  [DISTRACTOR] To announce that the speaker is changing to a completely new set of steps.
+  [DISTRACTOR] To summarize all the steps that were performed earlier.
+  [DISTRACTOR] To ask the listener whether they want the steps to be repeated.
+  [DISTRACTOR] To evaluate how well the listener understood the previous steps.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[4] Sentence ID: -CmdMw3PKV8_3
+Sentence:
+  The shoes, again get a little wear and tear.
+
+Question:
+  What is the overall function of this sentence in a broader explanation?
+
+Options:
+  [CORRECT]   To comment briefly on a recurring minor problem with the shoes.
+  [DISTRACTOR] To instruct someone on how to repair the shoes completely.
+  [DISTRACTOR] To advertise the shoes as being extremely durable.
+  [DISTRACTOR] To narrate the first time the shoes were ever worn.
+  [DISTRACTOR] To request permission to throw the shoes away.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[5] Sentence ID: -0yRaqY7nTE_1
+Sentence:
+  My name is Daniel Baldwin.
+
+Question:
+  What is the overall communicative role of this sentence?
+
+Options:
+  [CORRECT]   The speaker is introducing himself by stating his name.
+  [DISTRACTOR] The speaker is asking someone else to state their name.
+  [DISTRACTOR] The speaker is describing another person’s professional role.
+  [DISTRACTOR] The speaker is requesting information about a person named Daniel Baldwin.
+  [DISTRACTOR] The speaker is announcing a change to someone’s legal name.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[6] Sentence ID: -Bz0BNwqAE4_14
+Sentence:
+  These might bend, have a little more give in 'em, but whatever--basically, whatever you feel most comfortable with.
+
+Question:
+  What is the overall purpose of this sentence?
+
+Options:
+  [CORRECT]   To reassure the listener that they can choose whichever option feels most comfortable.
+  [DISTRACTOR] To insist that the listener must avoid options that feel too comfortable
+  [DISTRACTOR] To warn the listener that any choice will cause discomfort
+  [DISTRACTOR] To criticize the listener for choosing an option that bends too much
+  [DISTRACTOR] To announce that only one specific option is acceptable to use
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[7] Sentence ID: --8pSDeC-fg_16
+Sentence:
+  This is Dr. Art Bowler and this has been how to tell if you have low self esteem.
+
+Question:
+  What overall role does the speaker take in this sentence?
+
+Options:
+  [CORRECT]   A presenter closing a brief instructional segment.
+  [DISTRACTOR] A patient describing a personal struggle with self esteem.
+  [DISTRACTOR] An audience member asking for advice about self esteem.
+  [DISTRACTOR] A researcher reporting experimental results on self esteem.
+  [DISTRACTOR] A counselor inviting someone to a therapy session on self esteem.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[8] Sentence ID: -1PeVdIwiq0_26
+Sentence:
+  Negotiating is why you're there.
+
+Question:
+  What overall role does this sentence play in relation to the activity of negotiating?
+
+Options:
+  [CORRECT]   It emphasizes that negotiating is the primary purpose of being there.
+  [DISTRACTOR] It warns that negotiating should be avoided in that situation.
+  [DISTRACTOR] It explains how negotiating is done step by step.
+  [DISTRACTOR] It questions whether negotiating is really necessary there.
+  [DISTRACTOR] It concludes that negotiating has already been completed there.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[9] Sentence ID: -Db1NJJFmVI_27
+Sentence:
+  And that is going to be your skip hook kick.
+
+Question:
+  What is the main communicative purpose of this sentence?
+
+Options:
+  [CORRECT]   To identify and label a specific movement for the listener.
+  [DISTRACTOR] To ask the listener to choose between different movements.
+  [DISTRACTOR] To complain about how the movement was performed.
+  [DISTRACTOR] To remind the listener of a movement done earlier.
+  [DISTRACTOR] To suggest replacing this movement with another one.
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+
+[10] Sentence ID: -08ZGCviCm4_7
+Sentence:
+  That is a great tip that I give to a lot of my students.
+
+Question:
+  What is the overall purpose of this sentence?
+
+Options:
+  [CORRECT]   To comment on and endorse a piece of advice the speaker often shares.
+  [DISTRACTOR] To ask the listener to provide a new piece of advice to the speaker
+  [DISTRACTOR] To describe a specific problem that the students frequently encounter
+  [DISTRACTOR] To apologize for previously giving incorrect advice to the students
+  [DISTRACTOR] To warn the students not to follow a particular tip in the future
+
+Checks:
+  - 4 distractors ✓
+  - correct not duplicated ✓
+  - category = global
+
+----------------------------------------
+

@@ -1,0 +1,304 @@
+You are helping to build a benchmark for Sign Language Understanding (SLU)
+based on written sentences that come from Sign Language Translation (SLT) outputs.
+
+GOAL OF THIS BENCHMARK
+======================
+
+In SLT, automatic metrics like BLEU or ROUGE measure surface similarity,
+but they do NOT tell us whether a translation is actually understandable
+at the semantic level.
+
+We want to test whether a sentence (a translation) still preserves enough
+information for a human (or a model) to truly understand it.
+
+We are especially interested in:
+- whether the vocabulary and local content are rich enough to understand
+  who is doing what, where, and with which objects (FACTUAL),
+- whether temporal information (past vs present vs future, before vs after)
+  is clearly preserved, not just isolated time words (TEMPORAL),
+- whether logical relations such as causes, conditions, negations, and
+  contrasts are explicit and meaningful (LOGICAL),
+- whether the overall purpose or main idea of the sentence is clear (GLOBAL),
+- whether the communicative intention (question, instruction, suggestion,
+  expression of certainty/possibility) is preserved (PRAGMATIC).
+
+Your task is to generate multiple-choice COMPREHENSION QUESTIONS that
+directly probe these aspects.
+
+We will use each question in two ways:
+1) as a multiple-choice question (closed choice),
+2) as an open-ended question, where an LLM judge evaluates a free answer.
+
+Therefore, both the question and the options must really test
+understanding of the sentence, not just trivial details.
+
+
+HIGH-LEVEL TASK
+===============
+
+For each input sentence:
+
+1) Decide which semantic SLU categories it meaningfully supports.
+2) Generate 0–3 comprehension questions, with at most ONE question per category.
+   Each question must be multiple-choice with:
+   - 1 correct answer,
+   - 4 plausible but incorrect distractors.
+
+IMPORTANT BALANCE:
+- For most contentful sentences, you SHOULD generate 1–2 questions.
+- Use 0 questions only if the sentence is extremely short, phatic,
+  or too vague (e.g., “Hi.”, “Thanks.”, “Okay.”).
+- Prefer questions that test deeper understanding (temporal, logical,
+  pragmatic, global) over trivial factual details when possible.
+
+
+CATEGORIES
+==========
+
+You must use ONLY the following five categories:
+
+- "temporal"
+- "logical"
+- "pragmatic"
+- "factual"
+- "global"
+
+Each question MUST be labelled with exactly one of these categories.
+At most ONE question per category per sentence.
+
+Be aware that the same sentence may support different categories.
+When this happens, try to cover more informative categories first
+(temporal, logical, pragmatic, global) and avoid generating only trivial factual questions.
+
+Below are precise definitions and decision rules. Do NOT invent extra categories.
+
+
+1) TEMPORAL ("temporal")
+------------------------
+
+What it tests:
+- Whether the translation preserves temporal information:
+  past vs present vs future, already vs not yet, before vs after,
+  and clearly ordered events.
+
+Focus:
+- WHEN events happen and how they relate in time:
+  - tense (past / present / future),
+  - explicit future plans or past experiences,
+  - ordering (one event happens before or after another),
+  - explicit duration or time frames.
+
+Use this category when:
+- The sentence clearly indicates that something has already happened,
+  is happening now, or will happen,
+- Or when it specifies an order of events (e.g. one thing happens,
+  then another, or something happens before another),
+- Or when time expressions are used to signal change across time
+  (e.g. “now”, “later”, “in the next video”, “today I am going to…”).
+
+DO NOT mark a question as temporal just because there are time words
+or names of days/dates if they do not create a meaningful temporal
+relation. In that case it is usually FACTUAL.
+
+Temporal questions should focus on:
+- whether the event is past/present/future,
+- the relative order of events (which happens first/next),
+- time frames or durations that are crucial for understanding.
+
+
+2) LOGICAL RELATIONS ("logical")
+--------------------------------
+
+What it tests:
+- Whether the translation preserves logical relations:
+  causes, conditions, negations, comparisons, contrasts.
+
+Focus:
+- WHY something happens, under which CONDITIONS it happens,
+  and how statements relate logically (cause → effect, if → then,
+  not X, but Y, etc.).
+
+Use this category when the sentence explicitly expresses:
+- causal relations (because, so, therefore),
+- conditions (if, unless, only if),
+- explicit negations (does not, cannot, never),
+- explicit contrasts or corrections (but, however, instead of).
+
+Logical questions should test:
+- correct identification of cause vs effect,
+- presence or absence of a condition,
+- recognition of negation or contrast,
+- the logical structure encoded in the sentence.
+
+
+3) PRAGMATIC STRUCTURE ("pragmatic")
+------------------------------------
+
+What it tests:
+- Whether the translation preserves the communicative intention:
+  question vs instruction vs suggestion, certainty vs possibility, etc.
+
+Focus:
+- The TYPE of utterance (speech act) and WHY it is being said,
+  not just its literal content.
+
+Use this category when the sentence’s speech act is crucial, for example:
+- explicit questions,
+- instructions / commands,
+- suggestions / advice,
+- explicit expressions of certainty, doubt, hope, promise, intention.
+
+Pragmatic questions may ask about:
+- what the speaker is doing with the sentence (asking / advising / inviting),
+- what attitude or intention is expressed (e.g., certainty vs possibility),
+- what the speaker plans or promises to do.
+
+
+4) FACTUAL DETAILS AND CONTENT ("factual")
+------------------------------------------
+
+What it tests:
+- Whether the translation preserves concrete details and vocabulary:
+  objects, locations, properties, quantities, and specific actions.
+
+Focus:
+- Concrete, inspectable details and local content:
+  WHO / WHAT / WHERE / HOW MANY / WHICH PROPERTIES / WHICH ACTION.
+
+Use this category when the sentence contains specific information about:
+- entities (people, objects, animals),
+- locations or settings,
+- numbers or quantities,
+- physical properties (size, color, shape),
+- specific actions being performed.
+
+Factual questions should not be trivial YES/NO.
+They should require selecting the correct detail among several
+alternative details that are all plausible given the sentence.
+
+
+5) GLOBAL UNDERSTANDING ("global")
+-----------------------------------
+
+What it tests:
+- Whether the translation preserves the overall purpose or main idea
+  of the sentence.
+
+Focus:
+- The core meaning of the sentence as a whole.
+
+Use this category to capture:
+- who the sentence is “about” and what it says about them,
+- what the main event, situation, or purpose is,
+- the key message or role described (for example, who someone is,
+  what they are going to talk about, or the central claim of the sentence).
+
+Global questions should test whether the reader understands the sentence
+as a whole, not just one local detail.
+
+
+QUESTION REQUIREMENTS
+=====================
+
+For each sentence, you MUST output a list called "questions".
+
+Each question must be an object with:
+- "category": one of
+    "temporal", "logical", "pragmatic", "factual", "global"
+- "question": a short, clear question in English.
+- "correct_answer": a short, correct answer in English.
+- "distractors": an array of EXACTLY 4 incorrect answers in English.
+
+No other fields are required from you.
+
+Number of questions:
+- At most 3 questions per sentence.
+- At most 1 question per category per sentence.
+- For contentful sentences, aim for 1 or 2 questions.
+- For very short or phatic sentences, you may output an empty list: "questions": [].
+
+
+DISTRACTOR DESIGN
+==================
+
+The multiple-choice options must really test understanding.
+
+For each question:
+- There must be exactly 1 correct answer and 4 distractors.
+- ALL 5 options must be:
+  * grammatically correct,
+  * reasonable in length (short phrases or short sentences),
+  * semantically coherent with the sentence.
+
+Distractors MUST:
+- Be plausible given the sentence context,
+- Reuse similar vocabulary or structure when possible,
+- Differ from the correct answer by a specific, meaningful detail,
+  such as:
+  - different number or quantity,
+  - different role or entity (swapped subject/object),
+  - different time or order of events,
+  - wrong cause, condition, or negation,
+  - wrong intention or main idea.
+
+Distractors MUST NOT:
+- Be obviously absurd or unrelated to the sentence,
+- All be almost identical to each other,
+- Contradict basic grammar or world knowledge,
+- Be simple negations like “Not X” when X is the correct answer.
+
+Category-specific guidance:
+- Temporal questions: distractors should change tense, timing,
+  or order of events while staying plausible.
+- Logical questions: distractors may invert cause/effect, remove a condition,
+  or flip a negation.
+- Factual questions: distractors may change numbers, objects, or locations
+  in ways that fit the style of the sentence.
+- Pragmatic and global questions: distractors may change the speaker’s role,
+  intention, or main idea in subtle but incorrect ways.
+
+
+INPUT FORMAT
+============
+
+You will receive a JSON object with a field "sentences" which is a list
+of items. Each item has:
+
+- "sentence_id": a string identifier for the sentence
+- "source_split": "train", "val", or "test"
+- "text": the sentence in English
+- "video_id": video identifier string
+- "clip_id": clip identifier string
+
+You must treat the sentence text as the ONLY source of truth.
+Do not rely on external knowledge beyond what the sentence says.
+
+
+OUTPUT FORMAT
+=============
+
+You MUST answer with a SINGLE valid JSON object with this structure:
+
+- Top level: an object with a single field "sentences".
+- "sentences" is a list.
+- Each element of "sentences" is an object that:
+  - copies exactly "sentence_id", "source_split", "text",
+    "video_id" and "clip_id" from the input,
+  - adds a field "questions", which is a list of question objects as defined above.
+
+Rules:
+- Copy all input fields ("sentence_id", "source_split", "text",
+  "video_id", "clip_id") EXACTLY as given.
+- "questions" MUST be present for every sentence:
+  * use "questions": [] (empty list) only when no meaningful question
+    can be generated.
+- All questions, correct answers, and distractors must be in English.
+- The final answer must be valid JSON, with no extra commentary,
+  explanation, or text outside the JSON object.
+
+
+FINAL INSTRUCTIONS
+==================
+
+Now process ALL input sentences and return ONLY the JSON object described
+above, with no additional text, comments, or explanations.

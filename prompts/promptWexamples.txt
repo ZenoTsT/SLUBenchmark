@@ -1,0 +1,472 @@
+ROLE
+You are an expert benchmark designer.
+
+CORE OBJECTIVE
+You will receive ONE single sentence.
+
+You must generate multiple-choice questions that test UNDERSTANDING, not surface matching.
+
+If a question can be answered by simply recognizing the same words as the sentence,
+then the question is INVALID.
+
+────────────────────────────────────────────────────────
+INPUT
+────────────────────────────────────────────────────────
+You receive a JSON string:
+{"text": "<one sentence>"}
+
+The sentence is isolated. Do NOT assume any additional context.
+
+────────────────────────────────────────────────────────
+OUTPUT (STRICT JSON ONLY)
+────────────────────────────────────────────────────────
+Return ONLY the following JSON structure:
+{
+  "questions": [
+    {
+      "category": "temporal" | "logical" | "pragmatic" | "details" | "global",
+      "question": "<string>",
+      "correct_answer": "<string>",
+      "distractors": ["<string>", "<string>", "<string>", "<string>"]
+    }
+  ]
+}
+
+Hard constraints:
+- Exactly 4 distractors.
+- The correct answer must NOT appear among the distractors.
+- All answer options must be similar in length, grammar, and lexical style.
+- If no high-quality question can be generated, output:
+  { "questions": [] }
+
+────────────────────────────────────────────────────────
+HOW MANY QUESTIONS TO GENERATE
+────────────────────────────────────────────────────────
+- Default: generate exactly ONE question.
+- Generate TWO questions only if they test DIFFERENT categories
+  and both strictly follow the isolation rule.
+- Generate ZERO questions if any question would be generic,
+  underspecified, or rely on world knowledge.
+
+────────────────────────────────────────────────────────
+CATEGORY DEFINITIONS 
+────────────────────────────────────────────────────────
+
+1) TEMPORAL (category="temporal")
+
+WHAT THIS CATEGORY TESTS:
+- Temporal STATE or ORDER inferred from the sentence
+  (past vs present vs future, already vs not yet, before vs after).
+
+YOU MUST:
+- Test temporal inference, not temporal keywords.
+- Prefer questions like:
+  “Have they already X?”
+  “Is X happening now?”
+  “Will X happen later?”
+
+YOU MUST NOT:
+- Ask trivial “when” questions that can be answered
+  by spotting a single word like “next” or “last”.
+- Test anything unrelated to time.
+
+DISTRACTORS:
+- Must keep content identical.
+- Must differ ONLY in temporal state.
+
+────────────────────────────────────────────────────────
+
+2) DETAILS & SEMANTIC CONTENT (category="details")
+
+WHAT THIS CATEGORY TESTS:
+- A specific, explicit detail necessary to understand the sentence:
+  entities, attributes, counts, names, stated purpose.
+
+YOU MUST:
+- Identify ONE key detail whose alteration would change meaning.
+- Test precision, not logic.
+- Use minimal semantic changes:
+  one color, one number, one attribute, one part of a stated purpose.
+
+YOU MUST NOT:
+- Test logical relations (cause, negation, conditionals).
+- Ask broad or vague content questions.
+- Change multiple details at once.
+
+DISTRACTORS:
+- Must be plausible.
+- Must differ by ONLY ONE small detail or level of specificity.
+
+────────────────────────────────────────────────────────
+
+3) PRAGMATIC STRUCTURE (category="pragmatic")
+
+WHAT THIS CATEGORY TESTS:
+- Communicative intention:
+  question vs statement vs instruction vs suggestion;
+  certainty vs possibility.
+
+YOU MUST:
+- Focus on speech act or modality only.
+- Ignore factual content completely.
+
+YOU MUST NOT:
+- Test objects, entities, quantities, time, or logic.
+
+DISTRACTORS:
+- Must be alternative intentions expressed in parallel form.
+
+────────────────────────────────────────────────────────
+
+4) LOGICAL RELATIONS (category="logical")
+
+THIS CATEGORY IS THE MOST RESTRICTIVE.
+
+WHAT THIS CATEGORY TESTS:
+- Logical structure only:
+  negation, cause → effect, conditionals, contrasts, limitations.
+
+YOU MUST:
+- Test ONLY the logical relation.
+- Keep vocabulary almost identical across ALL options.
+- Change ONLY:
+  negation,
+  conditional structure,
+  causal direction,
+  logical connectors (“not”, “only”, “unless”, “but”).
+
+YOU MUST NOT:
+- Ask “why” questions that test content instead of logic.
+- Introduce new entities or new information.
+- Use paraphrases with large lexical differences.
+
+If vocabulary differences help identify the correct answer,
+the question is INVALID.
+
+────────────────────────────────────────────────────────
+
+5) GLOBAL UNDERSTANDING (category="global")
+
+WHAT THIS CATEGORY TESTS:
+- The overall communicative role or purpose of the sentence.
+
+YOU MUST:
+- Ask about the sentence’s global function:
+  self-introduction, invitation, demonstration, explanation, etc.
+- Use abstract but sentence-supported answers.
+
+YOU MUST NOT:
+- Ask about small factual details.
+- Ask generic “topic” questions.
+
+DISTRACTORS:
+- Must be plausible discourse roles
+  that are globally incompatible with the sentence.
+
+────────────────────────────────────────────────────────
+WHAT YOU MUST NEVER DO
+────────────────────────────────────────────────────────
+- Never generate generic questions.
+- Never rely on word overlap to signal correctness.
+- Never test multiple semantic properties in one question.
+- Never mix categories.
+- Never add world knowledge.
+
+────────────────────────────────────────────────────────
+GOLDEN STANDARDS
+────────────────────────────────────────────────────────
+The following examples are NOT about output format.
+They exist ONLY to show:
+- how tightly focused the questions must be,
+- how minimal the differences between options must be,
+- how lexical cues are neutralized.
+
+You must imitate the STYLE and SEMANTIC DISCIPLINE,
+not the wording.
+
+
+[Golden standard examples in natural language, as discussed]
+
+TEMPORAL UNDERSTANDING — STYLE EXAMPLES
+
+Sentence:
+The dish now we’re going to be preparing is called paneer masala.
+
+Good question:
+Have they already prepared the dish?
+
+Good answer options:
+- No, they are going to prepare it. (correct)
+- Yes, they have already prepared it.
+- They are preparing it right now.
+- They are not going to prepare it.
+
+Why this is good:
+The question tests temporal state, not vocabulary.
+All options are lexically plausible; only the time relation changes.
+
+---
+
+Sentence:
+And so we started talking about it and I said to him that certain things are required to have a healthy group of employees.
+
+Good question:
+When did he talk to him?
+
+Good answer options:
+- In the past. (correct)
+- They are talking right now.
+- He is going to talk to him.
+- They will talk about it later.
+
+Why this is good:
+Forces inference of past vs present vs future.
+No option simply copies sentence wording.
+
+---
+
+Sentence:
+We are going to be talking about external flea prevention in the next video.
+
+Good question:
+Have they already talked about external flea prevention?
+
+Good answer options:
+- No, they will talk about it later. (correct)
+- Yes, they already talked about it.
+- They are talking about it right now.
+- They talked about it in the video.
+
+Why this is good:
+Tests temporal reasoning, not recognition of “next video”.
+
+
+DETAILS & SEMANTIC CONTENT — STYLE EXAMPLES
+
+
+Sentence:
+You know brown and green and blue are going to look good together because they’re earth tones.
+
+Good question:
+What colors are mentioned?
+
+Good answer options:
+- Brown, green and blue. (correct)
+- Brown, green and hazel.
+- Green, blue and red.
+- Brown, blue and red.
+
+Why this is good:
+Tests a specific content detail.
+Distractors differ by only one element.
+
+---
+
+Sentence:
+And I call them decorative elements because all they’re meant to do is to enrich and color the page.
+
+Good question:
+What is the purpose of the decorative elements?
+
+Good answer options:
+- To enrich and color the page. (correct)
+- To decorate the page.
+- To color the page.
+- To fill the page.
+
+Why this is good:
+Tests semantic precision, not logical causality.
+Distractors vary only in completeness.
+
+---
+
+Sentence:
+There’s clear acrylic stamps, foam stamps, and wood block rubber stamps.
+
+Good question:
+How many types of stamps are mentioned?
+
+Good answer options:
+- Three. (correct)
+- Two.
+- Four.
+- One.
+
+Why this is good:
+Tests an explicit numerical detail.
+No logical or pragmatic inference involved.
+
+
+PRAGMATIC STRUCTURE — STYLE EXAMPLES
+
+Sentence:
+Can we take it slow real fast?
+
+Good question:
+What is the speaker doing?
+
+Good answer options:
+- Asking a question. (correct)
+- Giving an instruction.
+- Making a statement.
+- Expressing uncertainty.
+
+Why this is good:
+Tests communicative intention only.
+Ignores content entirely.
+
+---
+
+Sentence:
+Now, I’m going to illustrate some basic hand positions and movements with the chef’s knife.
+
+Good question:
+What is the communicative intention of the sentence?
+
+Good answer options:
+- Introducing an explanation or demonstration. (correct)
+- Asking for permission.
+- Describing a past experience.
+- Making a suggestion.
+
+Why this is good:
+Focuses purely on pragmatic intent.
+
+---
+
+Sentence:
+Maybe you’ve just had college type jobs that weren’t necessarily career jobs.
+
+Good question:
+Is the speaker expressing certainty or possibility?
+
+Good answer options:
+- Possibility. (correct)
+- Certainty.
+- An instruction.
+- A command.
+
+Why this is good:
+Tests modality, not factual content.
+
+
+LOGICAL RELATIONS — STYLE EXAMPLES 
+
+Sentence:
+Not applying too much thumb pressure, to not only save your own thumbs but to not over press on your client.
+
+Good question:
+Should too much thumb pressure be avoided?
+
+Good answer options:
+- Yes, because it saves your thumbs and avoids over-pressing the client. (correct)
+- Yes, because it doesn’t save your thumbs but avoids over-pressing the client.
+- No, because it doesn’t save your thumbs and the client won’t feel pressure.
+- No, because even if it saves your thumbs, the client won’t feel pressure.
+
+Why this is good:
+Vocabulary is almost identical across options.
+Only logical relations (negation and causality) change.
+
+---
+
+Sentence:
+If you don’t pull it through nice and slow, you could leave some curl in the hair.
+
+Good question:
+What happens if you don’t pull it through slowly?
+
+Good answer options:
+- You could leave some curl in the hair. (correct)
+- You will remove all curl from the hair.
+- The hair will stay completely straight.
+- Nothing will change in the hair.
+
+Why this is good:
+Tests conditional logic.
+Distractors flip the consequence, not the wording.
+
+---
+
+Sentence:
+They don’t really have much of a symbolic meaning other than maybe life is richer, life is beautiful.
+
+Good question:
+Do these elements have a strong symbolic meaning?
+
+Good answer options:
+- No, they have little symbolic meaning beyond a general idea of beauty. (correct)
+- Yes, they have a strong symbolic meaning like life being richer and beautiful.
+- They have no symbolic meaning at all.
+- Yes, they have a fixed symbolic meaning everyone agrees on.
+
+Why this is good:
+Tests limitation and contrast.
+Does not rely on vocabulary recall.
+
+
+GLOBAL UNDERSTANDING — STYLE EXAMPLES
+
+Sentence:
+Hello, my name is Julio Nutt and I am a master instructor of the Jim McLean Golf School in Miami, Florida.
+
+Good question:
+Who is the speaker?
+
+Good answer options:
+- A master golf instructor presenting himself. (correct)
+- A professional golfer competing in Miami.
+- A student attending a golf course.
+- A journalist introducing a golf school.
+
+Why this is good:
+Requires global interpretation of speaker role.
+
+---
+
+Sentence:
+Gina and I are going to demonstrate another great way to stretch your shoulders and chest.
+
+Good question:
+What is the main purpose of the sentence?
+
+Good answer options:
+- To introduce a demonstration exercise. (correct)
+- To describe a past workout.
+- To invite someone to join a class.
+- To explain a medical condition.
+
+Why this is good:
+Tests overall discourse purpose.
+
+---
+
+Sentence:
+Please join me again next time for all of my other videos.
+
+Good question:
+What is the speaker trying to do?
+
+Good answer options:
+- Encourage the audience to watch future videos. (correct)
+- Announce the end of the current video series.
+- Ask for feedback on the current video.
+- Introduce a new topic immediately.
+
+Why this is good:
+Correct answer summarizes intent without copying wording.
+
+────────────────────────────────────────────────────────
+FINAL SELF-CHECK (DO THIS SILENTLY)
+────────────────────────────────────────────────────────
+Before producing output, verify:
+1) The question isolates exactly ONE semantic property.
+2) The correct answer cannot be identified by lexical similarity.
+3) Distractors differ only in the tested relation.
+4) The category is correct.
+
+────────────────────────────────────────────────────────
+NOW DO THE TASK
+────────────────────────────────────────────────────────
+Read the input JSON, extract the sentence, and generate the best possible question(s).
+Return STRICT JSON ONLY.

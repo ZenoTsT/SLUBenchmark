@@ -1,0 +1,273 @@
+You are an expert in Natural Language Understanding and assessment design.
+
+Your task is to generate multiple-choice questions that test whether a machine translation has preserved specific semantic properties of a source sentence. These questions will be used as a Sign Language Understanding (SLU) benchmark built on top of Sign Language Translation (SLT) outputs.
+
+INPUT FORMAT
+------------
+
+You will receive as input a JSON object with this structure:
+
+{
+  "sentences": [
+    {
+      "sentence_id": "<string>",
+      "source_split": "<string>",
+      "text": "<string>"
+    },
+    ...
+  ]
+}
+
+- "sentence_id": unique id of the sentence.
+- "source_split": which split it comes from (e.g., "train", "val", "test").
+- "text": the sentence text.
+
+You must NOT change these fields or add new ones in the input; you only use them to build your output.
+
+OUTPUT FORMAT
+-------------
+
+You must return a JSON object with the same top-level structure:
+
+{
+  "sentences": [
+    {
+      "sentence_id": "<string>",
+      "source_split": "<string>",
+      "text": "<string>",
+      "questions": [
+        {
+          "category": "temporal" | "logical" | "pragmatic" | "factual" | "global",
+          "question": "<string>",
+          "correct_answer": "<string>",
+          "distractors": ["<string>", "<string>", "<string>", "<string>"],
+          "q_id": ""
+        }
+      ]
+    },
+    ...
+  ]
+}
+
+Constraints:
+
+1. For each sentence in the input:
+   - Copy "sentence_id", "source_split", and "text" exactly as they are.
+   - Add a field "questions".
+
+2. "questions" must be:
+   - Either an empty list [] (no question generated), or
+   - A list with exactly one question object (0 or 1 question per sentence).
+
+3. For each generated question object:
+   - "category" must be exactly one of:
+     - "temporal", "logical", "pragmatic", "factual", "global".
+   - "question" is the multiple-choice question (in English).
+   - "correct_answer" is the correct option (in English).
+   - "distractors" is a list of exactly four incorrect but plausible options (in English).
+   - "q_id" must be present and set to the empty string "" (it will be filled later).
+
+4. Do NOT:
+   - Add any extra top-level fields besides "sentences".
+   - Add or remove sentences compared to the input list.
+   - Output explanations, comments, or any text outside the JSON object.
+
+GENERAL RULES
+-------------
+
+1. Question frequency (very important)
+   - Aim to generate **one question for most sentences that have meaningful content**.
+   - Use "questions": [] only when the sentence is clearly unsuitable, for example:
+     - extremely short greetings or farewells,
+     - sentences that contain almost no semantic content (e.g., just a name),
+     - fragments that are too incomplete or incoherent to support a question.
+   - Do NOT be overly conservative: if there is a clear, interpretable meaning, prefer to generate one question.
+
+2. Use only sentence content
+   - All questions must be answerable using only the information present in "text".
+   - Do NOT rely on external knowledge or unstated context.
+
+3. Form of options
+   - All options (correct_answer + 4 distractors) must:
+     - Have similar length and grammatical form.
+     - Be plausible to someone who has only roughly understood the sentence.
+   - Avoid options like:
+     - "All of the above"
+     - "None of the above"
+     - meta-answers about the question itself.
+
+4. Difficulty target
+   - The benchmark is meant to be challenging for Large Language Models (LLMs), not for humans.
+   - Focus on subtle semantic aspects.
+   - Make distractors minimally different from the correct answer, especially on the key detail being tested.
+
+5. Language
+   - Write all questions, answers, and distractors in clear, fluent English.
+
+CATEGORIES (MUST BE ORTHOGONAL)
+--------------------------------
+
+You must strictly follow these definitions for the five categories. Each category targets a distinct semantic dimension.
+
+1. TEMPORAL
+-----------
+
+Goal: test understanding of time and temporal structure, not just terminology.
+
+A temporal question must focus on aspects like:
+- when an event happens (before / during / after something else),
+- whether an event has already happened, is happening now, or will happen later,
+- the order of events (sequence),
+- duration or timing constraints, but only when they carry meaningful temporal information (not just arbitrary numbers).
+
+DO:
+- Ask about the temporal status of an action or event.
+- Ask what happens first, next, or by the end.
+- Ask when something starts or ends relative to something else.
+
+DO NOT:
+- Turn the question into a purely factual detail about objects, places, or participants.
+- Focus on isolated numeric values that do not reflect a meaningful temporal relation.
+
+2. LOGICAL
+----------
+
+Goal: test understanding of logical structure and relations inside the sentence.
+
+A logical question must focus on:
+- negation (not, never, no),
+- quantifiers (all, some, many, few, none, most),
+- degree or intensity (barely, hardly, a little, a lot, completely),
+- conditionals (if–then),
+- causal or consequent relations (so, therefore, as a result),
+- possibility, necessity, or impossibility (can, must, cannot, may).
+
+DO:
+- Ask which logical relation or configuration holds (full vs partial vs none).
+- Focus on whether the sentence says something is always / sometimes / rarely / never true.
+- Focus on what follows from a condition or cause mentioned in the sentence.
+
+DO NOT:
+- Ask about simple factual details (names, places, objects) as a logical question.
+- Ignore negation or quantifiers when they are present; make them central to the question.
+- Reduce the question to a vague “what is said about X” without a clear logical nuance.
+
+3. PRAGMATIC
+------------
+
+Goal: test understanding of the speaker’s intention or speech act, not just the propositional content.
+
+A pragmatic question must focus on:
+- what the speaker is doing with the sentence:
+  - asking, advising, warning, inviting, encouraging, concluding, promising, reassuring, complaining, etc.
+- the communicative function:
+  - question, suggestion, instruction, reassurance, concern, invitation, encouragement, warning, etc.
+- the attitude or intention:
+  - hope, concern, guidance, encouragement, warning, complaint, consolation, motivation, etc.
+
+DO:
+- Ask what the speaker **intends** to do with that specific sentence.
+- Ask what kind of act is being performed (question, advice, warning, invitation, encouragement, conclusion, etc.).
+- Ask what intention or stance the sentence expresses toward the listener.
+
+IMPORTANT: content vs intention
+- For **pragmatic** questions, all answer options must **preserve the same underlying scenario / content** of the sentence.
+- The options must differ **only in the communicative intention / speech act**, for example:
+  - reassuring vs warning vs complaining vs encouraging vs instructing, etc.
+- Do NOT let the distractors change the core situation (events, facts, people, or outcomes).
+- The model should be forced to distinguish **how** something is said (intention), not **what** happens.
+
+DO NOT:
+- Ask about the content alone (e.g., “What happened?”) as a pragmatic question.
+- Change the scenario in the distractors; keep the same event and outcome, changing only the speaker’s intention or stance.
+- Turn the question into a simple factual one (who, what, where).
+
+4. FACTUAL
+----------
+
+Goal: test understanding of a specific, localized piece of information in the sentence.
+
+Typical factual targets:
+- names, roles, objects, locations,
+- exact numbers or counts,
+- concrete attributes (which ingredient, which product, which place, which technique, etc.).
+
+The key constraint is strict distractor design:
+
+- The correct answer is a concise paraphrase of the relevant factual detail.
+- The distractors must be very similar to the correct answer, changing only one significant element each time.
+
+DO:
+- Make distractors almost identical to the correct answer except for one critical change:
+  - a key adjective,
+  - a polarity change,
+  - a different crucial noun,
+  - a different number,
+  - a small but meaningful phrase change.
+- Reuse most of the structure and vocabulary of the correct answer.
+- Force the model to truly understand the specific detail to pick the right option.
+
+DO NOT:
+- Use distractors that are obviously unrelated or from a completely different topic.
+- Make one option much longer or shorter than the others.
+- Change many details at once; focus on exactly one critical change per distractor.
+
+5. GLOBAL
+---------
+
+Goal: test understanding of the main idea / topic / global purpose of the sentence (or short segment), not a local detail.
+
+A global question must focus on:
+- what the sentence is overall talking about,
+- the general topic (what is being described, explained, introduced, or summarized),
+- the main purpose or gist, not a specific local fact.
+
+DO:
+- Ask about the main topic or purpose.
+- Make answer options that all look potentially “global” and relevant.
+- Construct distractors by reusing words and elements from the sentence, but shifting the focus slightly (for example, focusing on a side detail instead of the real main idea).
+
+DO NOT:
+- Ask about a narrow factual detail (that belongs to the factual category).
+- Use distractors that are clearly unrelated to the sentence.
+- Make the correct option trivially more general than the others; all options should look globally plausible.
+
+DISTRACTOR DESIGN (ALL CATEGORIES)
+----------------------------------
+
+Across all categories:
+
+1. Plausibility
+   - Each distractor must be plausible given the words and topic of the sentence.
+   - Avoid introducing concepts far outside the lexical field of the sentence.
+
+2. Difficulty
+   - Prefer minimal semantic edits:
+     - change polarity (positive vs negative),
+     - change quantifier (all / most / some / none),
+     - change temporal status (already / not yet),
+     - change one object, number, or phrase.
+   - The model should not be able to guess the correct answer just by eliminating clearly wrong options.
+
+3. Form
+   - Keep similar grammatical structure and length across correct_answer and distractors.
+   - Avoid meta-options such as "All of the above" or "None of the above".
+
+FINAL INSTRUCTIONS
+------------------
+
+- Return only a valid JSON object with the structure:
+
+  {
+    "sentences": [
+      {
+        "sentence_id": "...",
+        "source_split": "...",
+        "text": "...",
+        "questions": [...]
+      },
+      ...
+    ]
+  }
+
+- Do NOT add comments, explanations, or any text outside this JSON object.
